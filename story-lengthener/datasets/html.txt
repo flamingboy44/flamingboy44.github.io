@@ -2,310 +2,6 @@
 <html>
 	<head>
 		<style>
-			a {
-				border: 3px outset gray;
-				background-color: gray;
-				color: white;
-				text-decoration: none;
-			}
-			a:hover {
-				color: cyan;
-				border-style: inset;
-			}
-		</style>
-	</head>
-	<body style="background-color:cornsilk">
-		<h1>GiantBooley's website</h1>
-		<p>friends github: <a href=https://WyattNewman.github.io/>wyattnewman.github.io (this is my website)</a></p>
-	<hr>
-	<div id="stuff">
-		<h2>Random stuff</h2><br>
-		<a href="fake-terminal">Fake terminal</a><br>
-		<a href="fake-hack-decimal">Fake hack decimal</a><br>
-		<a href="fake-hack-binary">Fake hack binary</a><br>
-		<a href="bookmarklets">Bookmarklets</a><br>
-		<a href="fake-hack-code">Fake code hack</a><br>
-		<a href="click-the-button">Click the button</a><br>
-		<a href="mining-simulator">Mining simulator</a><br>
-	</div>
-	<hr>
-	<div id="tools">
-		<h2>Tools stuff</h2><br>
-		<a href="tools">Other tools</a><br>
-		<a href="url-encode-decode">URL encoder and decoder</a><br>
-		<a href="number-shortener">Number shortener</a><br>
-		<a href="javascript-tester">Javascript tester</a><br>
-		<a href="upside-down-calculator">Upside down calculator generator</a><br>
-		<a href="file-downloader">File downloader</a><br>
-		<a href="html-viewer">HTML viewer</a><br>
-		<a href="website-embedder">Website embedder</a><br>
-		<a href="discord-text-emoji-generator">Discord text emoji generator</a><br>
-		<a href="story-lengthener">Story lengthener</a><br>
-	</div>
-	<hr>
-	<div id="unblocked">
-		<h2>Unblocked stuff</h2><br>
-		<a href="unbloked/y8/www.y8.com/games/slope.html">slope unblocked</a><br>
-		<a href="unbloked/y8/www.y8.com/games/subway_surfers_world_tour_houston.html">subway surfers unblocked</a><br>
-	</div>
-	<hr>
-	<div id="brokenStuff" style="opacity: 0.5;">
-		<h2>Broken stuff</h2><br>
-		<a href="nvidia-gaugan/gaugan.org/gaugan2">nvidia gaugan</a><br>
-	</div>
-	<hr>
-	</body>
-</html> <!DOCTYPE html>
-<html>
-	<title>Tools</title>
-	<head>
-		<style>
-body {
-  background-color: #FFF8DC;
-  color: black;
-}
-
-.dark-mode {
-  background-color: #000723;
-  color: white;
-}
-		</style>
-		<script>
-			var darkMode = false;
-			function toggleDarkMode() {
-				if (darkMode == true) {
-					document.body.style.backgroundColor="cornsilk";
-					document.body.style.color="black";
-					darkMode=false;
-				} else {
-					document.body.style.backgroundColor="#000723";
-					document.body.style.color="white";
-					darkMode=true;
-				};
-			};
-			var centered = false;
-			function toggleCentered() {
-				if (centered == true) {
-					document.body.style.textAlign="";
-					centered=false;
-				} else {
-					document.body.style.textAlign="center";
-					centered=true;
-				};
-			};
-			function getRandomInt(min, max) {
-				min = Math.ceil(min);
-				max = Math.floor(max)+1;
-				return Math.floor(Math.random() * (max - min) + min);
-			};
-			function arrayRandom(itdotlength) {
-				return getRandomInt(0,itdotlength-1);
-			};
-			// eightBall
-			const eightBallResponses = ["It is certain.","It is decidedly so.","Without a doubt.","Yes definitely.","You may rely on it.","As i see it, yes.","Most likely.","Outlook good.","Yes.","Signs point to yes.","Reply hazy, try again.","Ask again later.","Better not tell you now.","Cannot predict now.","Concentrate and ask again.","Don\'t count on it.","My reply is no.","My sources say no.","Outlook not so good.","Very doubtful."];
-			function eightBallButtonClick() {
-				// if ( document.getElementById("eightBallInput").textLength > 0) {
-					document.getElementById("eightBallOutput").innerHTML=eightBallResponses[getRandomInt(0,eightBallResponses.length-1)];
-				// };
-			};
-			// eightBall
-			
-			// dice
-			function diceRoll() {
-				document.getElementById("diceOutput").innerHTML=getRandomInt(1,document.getElementById("diceSides").value);
-			};
-			// dice
-			
-			// coin
-			const coinFlipTypes = ["heads","tails"];
-			function coinFlip() {
-				document.getElementById("coinOutput").innerHTML=coinFlipTypes[Math.round(Math.random())];
-			};
-			// coin
-			
-			// rng
-			function rngGenerate() {
-				if (document.getElementById("rngInput2").valueAsNumber > document.getElementById("rngInput1").valueAsNumber) {
-					document.getElementById("rngOutput").innerHTML=getRandomInt(document.getElementById("rngInput1").valueAsNumber,document.getElementById("rngInput2").valueAsNumber)
-				} else {
-					document.getElementById("rngOutput").innerHTML="Error";
-				};
-			};
-			// rng
-			
-			// dreidel
-			const dreidelSpinTypes = ["Nun","Shin","Hay","Gimel"];
-			function dreidelSpin() {
-				document.getElementById("dreidelOutput").innerHTML=dreidelSpinTypes[getRandomInt(0,3)];
-			};
-			// dreidel
-			
-			// plantgen
-			const plantGenPrefixes = ["brain","wrinkle","crunch","puff","slime","tangle","crumble","moist","squish","spore"];
-			const plantGenSuffixes = ["bulb","shroom","stalk","vine","weed","berry","fungus","puff","gill"];
-			function plantGenGenerate() {
-				document.getElementById("plantGenOutput").innerHTML=plantGenPrefixes[getRandomInt(0,plantGenPrefixes.length-1)]+plantGenSuffixes[getRandomInt(0,plantGenSuffixes.length-1)];
-			};
-			// plantgen
-			
-			// storygen
-			
-			var storyGenStoryNames = ["bob","tom","fred","mike","jim","joe","jeff","jack","john","ted"];
-			var storyGenStoryActions = ["looked at","punched","outsmarted","bewildered","hollered at","squished the brain of"];
-			var storyGenStoryFeelings = ["enraged","cross","mad","nice","happy"];
-			// var storyGenStory = [""];
-			function storyGenGenerate() {
-				document.getElementById("storyGenOutput").style.display="block";
-				document.getElementById("storyGenOutput").value = `${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} ${storyGenStoryActions[arrayRandom(storyGenStoryActions.length)]} ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} and ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} got ${storyGenStoryFeelings[arrayRandom(storyGenStoryFeelings.length)]} at ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} because ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} got ${storyGenStoryActions[arrayRandom(storyGenStoryActions.length)]}. ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} thought that ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} got ${storyGenStoryActions[arrayRandom(storyGenStoryActions.length)]} by ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]}, but ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} thought otherwise.`;
-			};
-			// storygen
-			
-			// multiplier
-			var multiplierNumber = 1;
-			var multiplierInfinity = false;
-			var multiplierInfinityDigits = 8.98846567431158;
-			var multiplierInfinityZeros = 307;
-			function multiplierReset() {
-				multiplierNumber=1;
-				multiplierInfinity = false;
-				multiplierInfinityDigits = 8.98846567431158;
-				multiplierInfinityZeros = 307;
-				document.getElementById("multiplierOutput").innerHTML=multiplierNumber;
-			};
-			function multiplierMultiply() {
-				if (multiplierNumber.toString() == "8.98846567431158e+307") {
-					multiplierInfinity = true;
-				};
-				if (multiplierInfinity == true) {
-					multiplierInfinityDigits = multiplierInfinityDigits*2;
-					if (multiplierInfinityDigits >= 10) {
-						multiplierInfinityDigits = multiplierInfinityDigits-10;
-						multiplierInfinityZeros++;
-					};
-					multiplierNumber=`${multiplierInfinityDigits}e+${multiplierInfinityZeros}`;
-				} else {
-					multiplierNumber=multiplierNumber*2;
-				};
-				document.getElementById("multiplierOutput").innerHTML=multiplierNumber;
-			};
-			// multiplier
-		</script>
-	</head>
-	<body>
-		<h1>Tools</h1>
-		<hr>
-		<label>Settings:</label>
-		<button type="button" onclick="toggleDarkMode();">Toggle dark mode</button>
-		<label>|</label>
-		<button type="button" onclick="toggleCentered();">Toggle centered</button>
-		<hr>
-		<div id="eightBall">
-			<h2>Magic 8 ball</h2>
-			<input type="text" id="eightBallInput">
-			<button type="button" onclick="eightBallButtonClick()">Shake magic 8 ball</button>
-			<b id="eightBallOutput"></b>
-		</div>
-		<hr>
-		<div id="dice">
-			<h2>Roll a die</h2>
-			<label for="diceSides">Select amount of sides:</label>
-			<select id="diceSides">
-				<option value=6>6 (hexahedron)</option>
-				<option value=7>7 (heptahedron)</option>
-				<option value=8>8 (octahedron)</option>
-				<option value=9>9 (enneahedron)</option>
-				<option value=10>10 (decahedron)</option>
-				<option value=11>11 (hendecahedron)</option>
-				<option value=12>12 (dodecahedron)</option>
-				<option value=13>13</option>
-				<option value=14>14</option>
-				<option value=15>15</option>
-				<option value=16>16</option>
-				<option value=17>17</option>
-				<option value=18>18</option>
-				<option value=19>19</option>
-				<option value=20>20</option>
-				<option value=21>21</option>
-				<option value=22>22</option>
-				<option value=23>23</option>
-				<option value=24>24</option>
-				<option value=25>25</option>
-				<option value=26>26</option>
-				<option value=27>27</option>
-				<option value=28>28</option>
-				<option value=29>29</option>
-				<option value=30>30</option>
-				<option value=31>31</option>
-				<option value=32>32</option>
-				<option value=33>33</option>
-				<option value=34>34</option>
-				<option value=35>35</option>
-				<option value=36>36</option>
-				<option value=37>37</option>
-				<option value=38>38</option>
-				<option value=39>39</option>
-				<option value=40>40</option>
-				<option value=41>41</option>
-				<option value=42>42</option>
-				<option value=43>43</option>
-				<option value=44>44</option>
-				<option value=45>45</option>
-				<option value=46>46</option>
-				<option value=47>47</option>
-				<option value=48>48</option>
-				<option value=49>49</option>
-				<option value=50>50</option>
-			</select>
-			<button type="button" onclick="diceRoll();">Roll die</button>
-			<b id="diceOutput"></b>
-		</div>
-		<hr>
-		<div id="coin">
-			<h2>Flip a coin</h2>
-			<button type="button" onclick="coinFlip();">Flip coin</button>
-			<b id="coinOutput"></b>
-		</div>
-		<hr>
-		<div id="rng">
-			<h2>Random number generator</h2>
-			<label>min:</label>
-			<input type="number" id="rngInput1">
-			<label>max:</label>
-			<input type="number" id="rngInput2">
-			<button type="button" onclick="rngGenerate();">Generate number</button>
-			<b id="rngOutput"></b>
-		</div>
-		<hr>
-		<div id="dreidel">
-			<h2>Spin a dreidel</h2>
-			<button type="button" onclick="dreidelSpin();">Spin dreidel</button>
-			<b id="dreidelOutput"></b>
-		</div>
-		<hr>
-		<div id="plantGen">
-			<h2>Plant generator</h2>
-			<button type="button" onclick="plantGenGenerate();">Generate</button>
-			<b id="plantGenOutput"></b>
-		</div>
-		<hr>
-		<div id="storyGen">
-			<h2>Story generator</h2>
-			<button type="button" onclick="storyGenGenerate();">Generate</button><br>
-			<textarea readonly style="resize:none;display:none;" id="storyGenOutput" rows="15" cols="75"></textarea>
-		</div>
-		<hr>
-		<div id="multiplier">
-			<h2>Multiplier</h2>
-			<button type="button" onclick="multiplierReset();">Reset</button>
-			<button type="button" onclick="multiplierMultiply();">Multiply</button>
-			<b id="multiplierOutput">1</b>
-		</div>
-		<hr>
-	</body>
-</html> <!DOCTYPE html>
-<html>
-	<head>
-		<style>
 		#container {
 			perspective: none;
 			top: 30%;
@@ -359,87 +55,42 @@ body {
 		<a href="javascript:(()=%3E%7Bdocument.body.style.transitionDuration%20=%20%220s%22;%20var%20mousex;%20var%20mousey;%20document.body.style.perspective%20=%20%22100px%22;%20document.addEventListener(%22mousemove%22,%20()%20=%3E%20%7B%20mousex%20=%20event.clientX;%20mousey%20=%20event.clientY;%20document.body.style.transform%20=%20%22perspective(1000px)%20rotateX(%22%20+%20((mousey-300)/-2)%20+%20%22deg)%20rotateY(%22%20+%20((mousex-660)/4)%20+%20%22deg)%22;%20%7D);%7D)();">move page with mouse</a><br>
 		<hr>
 	</body>
-</html> <html>
+</html> <!DOCTYPE html>
+<html>
 	<head>
+		<title>dont use touchscreen</title>
 		<style>
-		@font-face { font-family: Consolas; src: url('CONSOLA.TTF'); }
-		p {
-			font-family: Consolas
-		}
+			#button {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 11%;
+				height: 11%;
+				background-color: green;
+				border: 4px double red;
+				font-size: 22px;
+				color: red;
+				user-select: none;
+			}
 		</style>
-	</head>
-	<body style="background-color:black;">
-			<p id="text" style="color:#15C60D;">></p>
-			<script>
-function addText(what) {
-document.getElementById("text").innerHTML=document.getElementById("text").innerHTML+what
-};
-function clearText() {
-document.getElementById("text").innerHTML=">"
-};
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-};
-function myLoop() {
-  setTimeout(function() {
-  	clearText();
-	for (let o = 0; o < 50; o++) { //up amount
-			for (let i = 0; i < 12; i++) { //side amount
-			addText(getRandomInt(1000000000000000,9999999999999999));
+		<script>
+			function move() {
+				setTimeout(function() {
+					document.getElementById("button").style.top=(Math.random()*89)+"%";
+					document.getElementById("button").style.left=(Math.random()*89)+"%";
+				}, 100);
 			};
-			addText("\n");
-	};
-  myLoop();
-  }, 10)
-}
-
-myLoop();
-			</script>
-	</body> 
-</html> <html>
-	<head>
-		<style>
-		@font-face { font-family: Consolas; src: url('CONSOLA.TTF'); }
-		p {
-			font-family: Consolas
-		}
-		</style>
-	</head>
-	<body style="background-color:black;">
-			<p id="text" style="color:#15C60D;">></p>
-			<script>
-function addText(what) {
-document.getElementById("text").innerHTML=document.getElementById("text").innerHTML+what
-};
-function clearText() {
-document.getElementById("text").innerHTML=">"
-};
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-};
-function decimalToBinary(decimal) {
-return Number(decimal).toString(2)
-};
-function myLoop() {
-  setTimeout(function() {
-  	clearText();
-	for (let o = 0; o < 50; o++) { //up amount
-			for (let i = 0; i < 4; i++) { //side amount
-			addText(decimalToBinary(getRandomInt(1000000000000000,9999999999999999)));
+			function clickButton() {
+				alert("HOW DOD YOU CLIKC THE BUTTON HACKER PERSON");
+				var interval = setInterval(function() {
+					move();
+				},50);
 			};
-			addText("\n");
-	};
-  myLoop();
-  }, 10)
-}
-
-myLoop();
-			</script>
-	</body> 
+		</script>
+	</head>
+	<body>
+		<button id="button" onmouseover="move();" onclick="clickButton()">CLICK ME</button>
+	</body>
 </html> <!DOCTYPE html>
 <html>
 	<head>
@@ -550,35 +201,181 @@ myLoop();
 		<button onclick="generate();">generate emojis</button>
 		<p id="output"></p>
 	</body>
+</html> <html>
+	<head>
+		<style>
+		@font-face { font-family: Consolas; src: url('CONSOLA.TTF'); }
+		p {
+			font-family: Consolas
+		}
+		</style>
+	</head>
+	<body style="background-color:black;">
+			<p id="text" style="color:#15C60D;">></p>
+			<script>
+function addText(what) {
+document.getElementById("text").innerHTML=document.getElementById("text").innerHTML+what
+};
+function clearText() {
+document.getElementById("text").innerHTML=">"
+};
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+};
+function decimalToBinary(decimal) {
+return Number(decimal).toString(2)
+};
+function myLoop() {
+  setTimeout(function() {
+  	clearText();
+	for (let o = 0; o < 50; o++) { //up amount
+			for (let i = 0; i < 4; i++) { //side amount
+			addText(decimalToBinary(getRandomInt(1000000000000000,9999999999999999)));
+			};
+			addText("\n");
+	};
+  myLoop();
+  }, 10)
+}
+
+myLoop();
+			</script>
+	</body> 
 </html> <!DOCTYPE html>
 <html>
 	<head>
 		<style>
-			body {
-				background-color: cornsilk;
+			@font-face { font-family: Consolas; src: url('CONSOLA.TTF'); }
+			div {
+				font-family: Consolas;
+				color: #15C60D;
+				white-space: pre;
 			}
-			textarea {
-				display: inline-block;
-				width: 100%;
-				height: 500px;
+			body {
+				background-color: black;
 			}
 		</style>
 		<script>
-			function clickbutton() {
-				let inputText = document.getElementById("input").value;
-				for (let i = 0; i < inputText.length; i++) {
-					document.getElementById("output").value = inputText.replace('bob','tom');
+				var numberOfLines = 1;
+				var codeparts = [
+					"bob Bob = new Bob;",
+					"if (mikeNum.length >= document.body.getNumberOfStuff) {",
+					"enum.docsEnabler = true;",
+					"};",
+					"function hackBob(val) {",
+					"document.getElementById(\"index\") = atlasNumber.toString(5.3);",
+					"public void onExplosion(final class_2664 explosionPacket, final CallbackInfo ci) {",
+					"at com.strobel.decompiler.languages.java.ast.AstBuilder.createTypeCore(AstBuilder.java:519);",
+					"at com.strobel.decompiler.ast.TypeAnalysis.inferCall(TypeAnalysis.java:2438);",
+					"java.lang.IllegalStateException: Invalid BootstrapMethods attribute entry: 2 additional arguments required for method java/lang/invoke/StringConcatFactory.makeConcatWithConstants, but only 1 specified.",
+					"}}}}}}}}}}}}}}}]]}}}}]]};",
+					"let list = {text: mapper.nodeNumber, frustum: none};",
+					"var bisectorType = \"binary\";",
+					"for (let i = 0; i < 43; i++) {",
+					"EncryptionDataset.forgeInformation();",
+					"if (binaryBlock[0] == binaryBlock.blocks) {",
+					"}]",
+					"]",
+					"let sets = 0;",
+					"addNode();",
+					"function hackerEnabler(val) {",
+					"console.log(`HTMLDOM.enumDocsEnabler: ${enum.docsEnabler}, 43 bits overwritten`);"
+				];
+				function clearText() {
+					document.getElementById("text").innerHTML="Bobdoc function: loaded;";
 				};
-			};
-		</script>
+				function getRandomInt(min, max) {
+					min = Math.ceil(min);
+					max = Math.floor(max)+1;
+					return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+				};
+				var tabs = 0;
+				var tabText = "";
+				var interval = setInterval(function() {
+					var nextLine = codeparts[getRandomInt(0,codeparts.length-1)];
+					tabs = tabs+getRandomInt(-2,1);
+					if (tabs < 0) {
+						tabs = 0;
+					};
+					tabText = "";
+					for (let i = 0; i < tabs; i++) {
+						tabText = tabText+"	";
+					};
+					document.getElementById("text").innerHTML=document.getElementById("text").innerHTML+"<br>"+tabText+nextLine;
+					numberOfLines++;
+					if (numberOfLines > 50) {
+						let textblock = document.getElementById("text").innerHTML;
+						
+						// break the textblock into an array of lines
+						var lines = textblock.split('<br>');
+						// remove one line, starting at the first position
+						lines.splice(0,1);
+						// join the array back into a single string
+						var newtext = lines.join('<br>');
+						
+						document.getElementById("text").innerHTML = newtext;
+						numberOfLines = numberOfLines-1;
+					};
+				}, 30);
+			</script>
 	</head>
 	<body>
-		<h1>Javascript to bookmarklet</h1>
-		<hr>
-		<textarea style="white-space: pre;" id="input" placeholder="type javascript but you cant do comments"></textarea>
-		<button onclick="clickbutton();">click to convert</button>
-		<textarea id="output" readonly></textarea>
-	</body>
+		<div id="text">bobDoc function: loaded;</div>
+	</body> 
+</html> <html>
+	<head>
+		<style>
+		@font-face { font-family: Consolas; src: url('CONSOLA.TTF'); }
+		p {
+			font-family: Consolas
+		}
+		</style>
+	</head>
+	<body style="background-color:black;">
+			<p id="text" style="color:#15C60D;">></p>
+			<script>
+function addText(what) {
+document.getElementById("text").innerHTML=document.getElementById("text").innerHTML+what
+};
+function clearText() {
+document.getElementById("text").innerHTML=">"
+};
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+};
+function myLoop() {
+  setTimeout(function() {
+  	clearText();
+	for (let o = 0; o < 50; o++) { //up amount
+			for (let i = 0; i < 12; i++) { //side amount
+			addText(getRandomInt(1000000000000000,9999999999999999));
+			};
+			addText("\n");
+	};
+  myLoop();
+  }, 10)
+}
+
+myLoop();
+			</script>
+	</body> 
+</html> <html>
+	<head>
+		<style>
+		@font-face { font-family: Consolas; src: url('CONSOLA.TTF'); }
+		p {
+			font-family: Consolas
+		}
+		</style>
+	</head>
+	<body style="background-color:black;">
+			<p id="text" style="color:#15C60D;" contenteditable="true">></p>
+			<script>document.designMode='on'</script>
+	</body> 
 </html> <!DOCTYPE html>
 <html>
 	<head>
@@ -624,6 +421,281 @@ myLoop();
 		<p>type contents</p>
 		<textarea id="input" placeholder="type here" rows="50" cols="150"></textarea><br>
 		<button onclick="downloadfile();">Download</button>
+	</body>
+</html> 
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML viewer</title>
+		<style>
+			#nonfullscreen {
+				display: block;
+			}
+			body {
+				background-color:cornsilk;
+				padding: 0px;
+			}
+			.border {
+				background-color: darkgray;
+				text-align: center;
+				user-select: none;
+				font-size: 32px;
+				display: block;
+				border: none;
+				float: left;
+			}
+			.border:hover {
+				background-color: gray;
+			}
+			iframe {
+				border: none;
+				display: block;
+				margin: 0px;
+				padding: 0px;
+				outline: none;
+			}
+			textarea {
+				resize: vertical;
+				border: none;
+				white-space: pre;
+				width: 90%;
+			}
+			.exitfull {
+				position: fixed;
+				opacity: 0.3;
+				border: 1px solid black;
+				background-color: darkgray;
+				top: 0;
+				left: 0;
+				width: 92px;
+				height: 20px;
+				padding: 0px;
+				border-bottom-right-radius: 10px;
+			}
+			.exitfull:hover {
+				position: fixed;
+				opacity: 0.8;
+				border: 1px solid black;
+				background-color: gray;
+				top: 0;
+				left: 0;
+				width: 92px;
+				height: 20px;
+				padding: 0px;
+				border-bottom-right-radius: 10px;
+			}
+			#title {
+				background-color: lightgray;
+				border: 3px inset gray;
+				width: 100%;
+				display: block;
+			}
+		</style>
+		<script>
+			function save() {
+				localStorage.setItem('HTMLSAVE', document.getElementById("input").value);
+			};
+			window.onload = function() {
+				document.getElementById("input").value = localStorage.getItem('HTMLSAVE');
+			};
+			function download(filename, text) {
+				var element = document.createElement('a');
+				element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+				element.setAttribute('download', filename);
+				
+				element.style.display = 'none';
+				document.body.appendChild(element);
+
+				element.click();
+				
+				document.body.removeChild(element);
+			};
+			function downloadHTML() {
+				download("index.html",document.getElementById("input").value);
+			};
+			window.onbeforeunload = function() {
+				if (document.getElementById("input").value !== localStorage.getItem('HTMLSAVE')) {
+					return 'Are you sure you want to leave?';
+				};
+			};
+			function updateAsHTML() {
+				document.getElementById("title").innerHTML = "Title: ";
+				document.getElementById("embed").srcdoc=document.getElementById("input").value;
+				setTimeout(() => {
+					document.getElementById("title").innerHTML = "Title: "+document.getElementById("embed").contentWindow.document.getElementsByTagName("title")[0].innerHTML;
+				}, 100);
+				
+			};
+			var fullscreen = false;
+			function toggleFullScreen() {
+				if (fullscreen == true) {
+					fullscreen = false;
+					document.getElementById("nonfullscreen").style.display="block";
+					document.getElementsByClassName("exitfull")[0].style.display="none";
+				} else {
+					fullscreen = true;
+					document.getElementById("nonfullscreen").style.display="none";
+					document.getElementsByClassName("exitfull")[0].style.display="block";
+				};
+			};
+			var darkModeOn = false;
+			function darkMode() {
+				if (darkModeOn == true) {
+					darkModeOn = false;
+					document.getElementById("input").style.backgroundColor="white";
+					document.getElementById("input").style.color="black";
+					document.getElementById("jsinput").style.backgroundColor="white";
+					document.getElementById("jsinput").style.color="black";
+					document.body.style="background-color: cornsilk; color: black";
+				} else {
+					darkModeOn = true;
+					document.getElementById("input").style.backgroundColor="darkslategray";
+					document.getElementById("input").style.color="white";
+					document.getElementById("jsinput").style.backgroundColor="darkslategray";
+					document.getElementById("jsinput").style.color="white";
+					document.body.style="background-color: #000723; color: white";
+				};
+			};
+			function unloadHTML() {
+				document.getElementById("embed").srcdoc="";
+				document.getElementById("title").innerHTML = "Title: ";
+			};
+			function iFrameJavascript() {
+				alert("bob");
+			};
+			function runJavascript() {
+				var x = document.getElementById('embed').contentWindow.createElement("script");
+				x.innerHTML = "function thisFunctionIsMegaLongSoItDoesntInterfereWithThePageAndItIsAFunctionBobTomFredMike() {"+document.getElementById("jsinput").value+"};";
+				document.getElementById('embed').contentWindow.thisFunctionIsMegaLongSoItDoesntInterfereWithThePageAndItIsAFunctionBobTomFredMike();
+				x.remove();
+			};
+		</script>
+	</head>
+	<body>
+		<div id="nonfullscreen">
+			<h1>HTML viewer</h1><br>
+			<hr>
+			<label>Settings:</label>
+			<input id="darkmode" type="checkbox" onclick="darkMode();">Dark mode |</input>
+			<button onclick="save(); alert('HTML input saved to local storage.');">Save</button>
+			<hr>
+			<textarea style="background-color:white;color:black;height:350px;" placeholder="Type HTML" id="input" spellcheck="false" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea><br>
+			<textarea style="background-color:white;color:black;height:100px;display: none;" placeholder="Type javascript" id="jsinput" spellcheck="false" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea>
+			<button class="border" style="width:100%;" onclick="updateAsHTML();"><strong>Update HTML</strong></button><br><br>
+			<div id="title">Title: </div>
+			<button class="border" style="width:33.333%;" onclick="downloadHTML();"><strong>Download</strong></button>
+			<button class="border" style="width:33.333%;" onclick="unloadHTML();"><strong>Unload HTML</strong></button>
+			<button class="border" style="width:25%; display: none;" onclick="runJavascript();"><strong>Run javascript</strong></button>
+			<button class="border" style="width:33.333%;" onclick="toggleFullScreen();"><strong>Fullscreen</strong></button><br>
+		</div>
+	</body>
+	<div style="background-color:white">
+			<button style="display: none;" class="exitfull" onclick="toggleFullScreen()">Exit fullscreen</button>
+			<iframe id="embed" srcdoc="<p>type in text box and press update html</p>" width="100%" height="617"></iframe>
+	</div>
+</html> <!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var squareLeft = 0;
+			var squareRight = 0;
+			var curlyLeft = 0;
+			var curlyRight = 0;
+			var parenthesesLeft = 0;
+			var parenthesesRight = 0;
+			var text = "";
+			function clickButton() {
+				squareLeft = 0;
+				squareRight = 0;
+				curlyLeft = 0;
+				curlyRight = 0;
+				parenthesesLeft = 0;
+				parenthesesRight = 0;
+				text = document.getElementById("javascript").value;
+				
+				for (let i = 0;i < text.length;i++) {
+					if (text.charAt(i)=="[") {
+						squareLeft++;
+					} else if (text.charAt(i)=="]") {
+						squareRight++;
+					} else if (text.charAt(i)=="{") {
+						curlyLeft++;
+					} else if (text.charAt(i)=="}") {
+						curlyRight++;
+					} else if (text.charAt(i)=="(") {
+						parenthesesLeft++;
+					} else if (text.charAt(i)==")") {
+						parenthesesRight++;
+					};
+				};
+				document.getElementById("mike").innerHTML=`[: ${squareLeft}<br>]: ${squareRight}<br>{: ${curlyLeft}<br>}: ${curlyRight}<br>(:${parenthesesLeft}<br>): ${parenthesesRight}`;
+			};
+		</script>
+	</head>
+	<body style="background-color:cornsilk">
+		<h1>Type javascript and click the button</h1><hr>
+		<textarea id="javascript" rows="30" cols="130">type</textarea><br>
+		<label>click the button to see how many of each bracket things there are</label>
+		<button type="button" onclick="clickButton();">the button</button>
+		<p id="mike">the results will be here</p>
+	</body>
+</html> <!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				background-color: cornsilk;
+			}
+			textarea {
+				display: inline-block;
+				width: 100%;
+				height: 500px;
+			}
+		</style>
+		<script>
+			function clickbutton() {
+				let inputText = document.getElementById("input").value;
+				for (let i = 0; i < inputText.length; i++) {
+					document.getElementById("output").value = inputText.replace('bob','tom');
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<h1>Javascript to bookmarklet</h1>
+		<hr>
+		<textarea style="white-space: pre;" id="input" placeholder="type javascript but you cant do comments"></textarea>
+		<button onclick="clickbutton();">click to convert</button>
+		<textarea id="output" readonly></textarea>
+	</body>
+</html> 
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="shortcut icon" href="//assets-cdn.kahoot.it/controller/v2/favicon.ico"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-itunes-app" content="app-id=1131203560"/>
+		<meta name="theme-color" content="#000000"/>
+		<meta name="google" content="notranslate"/>
+		<meta name="description" content="Join a game of kahoot here. Kahoot! is a free game-based learning platform that makes it fun to learn – any subject, in any language, on any device, for all ages!"/>
+		<meta name="keywords" content="education, platform, smart phone, tablet, mobile, social, inclusive, HTML5, classroom, engagement, play, game, fun, quiz, multi-player, pedagogy, learning model, learn, gamification."/>
+		<link rel="preconnect" href="https://fonts.googleapis.com"/>
+		<link rel="preconnect" href="https://cdn.amplitude.com"/>
+		<title>Play Kahoot! - Enter game PIN here!</title>
+		<script>
+			function sendGameStats() {}!function(e,t){var n=e.amplitude||{_q:[],_iq:{}},i=t.createElement("script");i.type="text/javascript",i.integrity="sha384-a+mq7tiLwde/00Oc7avFHLn/ttGfdAq1rtZc7u97SEzIiyYoT2IsOKWCkAThwdEu",i.crossOrigin="anonymous",i.async=!0,i.src="https://cdn.amplitude.com/libs/amplitude-5.3.0-min.gz.js",i.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var r=t.getElementsByTagName("script")[0];function s(e,t){e.prototype[t]=function(){return this._q.push([t].concat(Array.prototype.slice.call(arguments,0))),this}}r.parentNode.insertBefore(i,r);for(var o=function(){return this._q=[],this},a=["add","append","clearAll","prepend","set","setOnce","unset"],u=0;u<a.length;u++)s(o,a[u]);n.Identify=o;for(var c=function(){return this._q=[],this},l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"],p=0;p<l.length;p++)s(c,l[p]);n.Revenue=c;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"];function f(e){function t(t){e[t]=function(){e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}for(var n=0;n<d.length;n++)t(d[n])}f(n),n.getInstance=function(e){return e=(e&&0!==e.length?e:"$default_instance").toLowerCase(),n._iq.hasOwnProperty(e)||(n._iq[e]={_q:[]},f(n._iq[e])),n._iq[e]},e.amplitude=n}(window,document)
+		</script>
+		<link rel="icon" href="//assets-cdn.kahoot.it/controller/v2/favicon.ico">
+	</head>
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<div id="root"></div>
+		<script src="//assets-cdn.kahoot.it/controller/v2/assets/js/runtime-main.fb5c668a.js"></script>
+		<script src="//assets-cdn.kahoot.it/controller/v2/assets/js/vendors~main.e66fd8a7.chunk.js"></script>
+		<script src="//assets-cdn.kahoot.it/controller/v2/assets/js/main.bf0f4ca9.chunk.js">
+		</script>
 	</body>
 </html> <!DOCTYPE html>
 <html>
@@ -1072,6 +1144,42 @@ myLoop();
 		<br>
 		<b id="output"></b>
 	</body>
+</html> <!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#player {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100px;
+				height: 100px;
+				background-color: gold;
+				border: 5px outset orange
+			}
+		</style>
+		<script>
+			var x = 0;
+			var y = 0;
+			document.onkeypress = function (e) {
+				e = e || window.event;
+				if (e.keyCode == 119) { // w
+					y = y + 10;
+				} else if (e.keyCode == 97) { // a
+					x = x - 10;
+				} else if (e.keyCode == 115) { // s
+					y = y - 10;
+				} else if (e.keyCode == 100) { //d
+					x = x + 10;
+				};
+				document.getElementById("player").style.bottom = y+"px";
+				document.getElementById("player").style.left = x+"px";
+			};
+		</script>
+	</head>
+	<body>
+		<div id="player"></div>
+	</body>
 </html> 
 <!DOCTYPE html>
 <html>
@@ -1160,6 +1268,360 @@ myLoop();
 	</body>
 </html> <!DOCTYPE html>
 <html>
+	<title>Tools</title>
+	<head>
+		<style>
+body {
+  background-color: #FFF8DC;
+  color: black;
+}
+
+.dark-mode {
+  background-color: #000723;
+  color: white;
+}
+		</style>
+		<script>
+			var darkMode = false;
+			function toggleDarkMode() {
+				if (darkMode == true) {
+					document.body.style.backgroundColor="cornsilk";
+					document.body.style.color="black";
+					darkMode=false;
+				} else {
+					document.body.style.backgroundColor="#000723";
+					document.body.style.color="white";
+					darkMode=true;
+				};
+			};
+			var centered = false;
+			function toggleCentered() {
+				if (centered == true) {
+					document.body.style.textAlign="";
+					centered=false;
+				} else {
+					document.body.style.textAlign="center";
+					centered=true;
+				};
+			};
+			function getRandomInt(min, max) {
+				min = Math.ceil(min);
+				max = Math.floor(max)+1;
+				return Math.floor(Math.random() * (max - min) + min);
+			};
+			function arrayRandom(itdotlength) {
+				return getRandomInt(0,itdotlength-1);
+			};
+			// eightBall
+			const eightBallResponses = ["It is certain.","It is decidedly so.","Without a doubt.","Yes definitely.","You may rely on it.","As i see it, yes.","Most likely.","Outlook good.","Yes.","Signs point to yes.","Reply hazy, try again.","Ask again later.","Better not tell you now.","Cannot predict now.","Concentrate and ask again.","Don\'t count on it.","My reply is no.","My sources say no.","Outlook not so good.","Very doubtful."];
+			function eightBallButtonClick() {
+				// if ( document.getElementById("eightBallInput").textLength > 0) {
+					document.getElementById("eightBallOutput").innerHTML=eightBallResponses[getRandomInt(0,eightBallResponses.length-1)];
+				// };
+			};
+			// eightBall
+			
+			// dice
+			function diceRoll() {
+				document.getElementById("diceOutput").innerHTML=getRandomInt(1,document.getElementById("diceSides").value);
+			};
+			// dice
+			
+			// coin
+			const coinFlipTypes = ["heads","tails"];
+			function coinFlip() {
+				document.getElementById("coinOutput").innerHTML=coinFlipTypes[Math.round(Math.random())];
+			};
+			// coin
+			
+			// rng
+			function rngGenerate() {
+				if (document.getElementById("rngInput2").valueAsNumber > document.getElementById("rngInput1").valueAsNumber) {
+					document.getElementById("rngOutput").innerHTML=getRandomInt(document.getElementById("rngInput1").valueAsNumber,document.getElementById("rngInput2").valueAsNumber)
+				} else {
+					document.getElementById("rngOutput").innerHTML="Error";
+				};
+			};
+			// rng
+			
+			// dreidel
+			const dreidelSpinTypes = ["Nun","Shin","Hay","Gimel"];
+			function dreidelSpin() {
+				document.getElementById("dreidelOutput").innerHTML=dreidelSpinTypes[getRandomInt(0,3)];
+			};
+			// dreidel
+			
+			// plantgen
+			const plantGenPrefixes = ["brain","wrinkle","crunch","puff","slime","tangle","crumble","moist","squish","spore"];
+			const plantGenSuffixes = ["bulb","shroom","stalk","vine","weed","berry","fungus","puff","gill"];
+			function plantGenGenerate() {
+				document.getElementById("plantGenOutput").innerHTML=plantGenPrefixes[getRandomInt(0,plantGenPrefixes.length-1)]+plantGenSuffixes[getRandomInt(0,plantGenSuffixes.length-1)];
+			};
+			// plantgen
+			
+			// storygen
+			
+			var storyGenStoryNames = ["bob","tom","fred","mike","jim","joe","jeff","jack","john","ted"];
+			var storyGenStoryActions = ["looked at","punched","outsmarted","bewildered","hollered at","squished the brain of"];
+			var storyGenStoryFeelings = ["enraged","cross","mad","nice","happy"];
+			// var storyGenStory = [""];
+			function storyGenGenerate() {
+				document.getElementById("storyGenOutput").style.display="block";
+				document.getElementById("storyGenOutput").value = `${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} ${storyGenStoryActions[arrayRandom(storyGenStoryActions.length)]} ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} and ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} got ${storyGenStoryFeelings[arrayRandom(storyGenStoryFeelings.length)]} at ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} because ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} got ${storyGenStoryActions[arrayRandom(storyGenStoryActions.length)]}. ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} thought that ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} got ${storyGenStoryActions[arrayRandom(storyGenStoryActions.length)]} by ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]}, but ${storyGenStoryNames[arrayRandom(storyGenStoryNames.length)]} thought otherwise.`;
+			};
+			// storygen
+			
+			// multiplier
+			var multiplierNumber = 1;
+			var multiplierInfinity = false;
+			var multiplierInfinityDigits = 8.98846567431158;
+			var multiplierInfinityZeros = 307;
+			function multiplierReset() {
+				multiplierNumber=1;
+				multiplierInfinity = false;
+				multiplierInfinityDigits = 8.98846567431158;
+				multiplierInfinityZeros = 307;
+				document.getElementById("multiplierOutput").innerHTML=multiplierNumber;
+			};
+			function multiplierMultiply() {
+				if (multiplierNumber.toString() == "8.98846567431158e+307") {
+					multiplierInfinity = true;
+				};
+				if (multiplierInfinity == true) {
+					multiplierInfinityDigits = multiplierInfinityDigits*2;
+					if (multiplierInfinityDigits >= 10) {
+						multiplierInfinityDigits = multiplierInfinityDigits-10;
+						multiplierInfinityZeros++;
+					};
+					multiplierNumber=`${multiplierInfinityDigits}e+${multiplierInfinityZeros}`;
+				} else {
+					multiplierNumber=multiplierNumber*2;
+				};
+				document.getElementById("multiplierOutput").innerHTML=multiplierNumber;
+			};
+			// multiplier
+		</script>
+	</head>
+	<body>
+		<h1>Tools</h1>
+		<hr>
+		<label>Settings:</label>
+		<button type="button" onclick="toggleDarkMode();">Toggle dark mode</button>
+		<label>|</label>
+		<button type="button" onclick="toggleCentered();">Toggle centered</button>
+		<hr>
+		<div id="eightBall">
+			<h2>Magic 8 ball</h2>
+			<input type="text" id="eightBallInput">
+			<button type="button" onclick="eightBallButtonClick()">Shake magic 8 ball</button>
+			<b id="eightBallOutput"></b>
+		</div>
+		<hr>
+		<div id="dice">
+			<h2>Roll a die</h2>
+			<label for="diceSides">Select amount of sides:</label>
+			<select id="diceSides">
+				<option value=6>6 (hexahedron)</option>
+				<option value=7>7 (heptahedron)</option>
+				<option value=8>8 (octahedron)</option>
+				<option value=9>9 (enneahedron)</option>
+				<option value=10>10 (decahedron)</option>
+				<option value=11>11 (hendecahedron)</option>
+				<option value=12>12 (dodecahedron)</option>
+				<option value=13>13</option>
+				<option value=14>14</option>
+				<option value=15>15</option>
+				<option value=16>16</option>
+				<option value=17>17</option>
+				<option value=18>18</option>
+				<option value=19>19</option>
+				<option value=20>20</option>
+				<option value=21>21</option>
+				<option value=22>22</option>
+				<option value=23>23</option>
+				<option value=24>24</option>
+				<option value=25>25</option>
+				<option value=26>26</option>
+				<option value=27>27</option>
+				<option value=28>28</option>
+				<option value=29>29</option>
+				<option value=30>30</option>
+				<option value=31>31</option>
+				<option value=32>32</option>
+				<option value=33>33</option>
+				<option value=34>34</option>
+				<option value=35>35</option>
+				<option value=36>36</option>
+				<option value=37>37</option>
+				<option value=38>38</option>
+				<option value=39>39</option>
+				<option value=40>40</option>
+				<option value=41>41</option>
+				<option value=42>42</option>
+				<option value=43>43</option>
+				<option value=44>44</option>
+				<option value=45>45</option>
+				<option value=46>46</option>
+				<option value=47>47</option>
+				<option value=48>48</option>
+				<option value=49>49</option>
+				<option value=50>50</option>
+			</select>
+			<button type="button" onclick="diceRoll();">Roll die</button>
+			<b id="diceOutput"></b>
+		</div>
+		<hr>
+		<div id="coin">
+			<h2>Flip a coin</h2>
+			<button type="button" onclick="coinFlip();">Flip coin</button>
+			<b id="coinOutput"></b>
+		</div>
+		<hr>
+		<div id="rng">
+			<h2>Random number generator</h2>
+			<label>min:</label>
+			<input type="number" id="rngInput1">
+			<label>max:</label>
+			<input type="number" id="rngInput2">
+			<button type="button" onclick="rngGenerate();">Generate number</button>
+			<b id="rngOutput"></b>
+		</div>
+		<hr>
+		<div id="dreidel">
+			<h2>Spin a dreidel</h2>
+			<button type="button" onclick="dreidelSpin();">Spin dreidel</button>
+			<b id="dreidelOutput"></b>
+		</div>
+		<hr>
+		<div id="plantGen">
+			<h2>Plant generator</h2>
+			<button type="button" onclick="plantGenGenerate();">Generate</button>
+			<b id="plantGenOutput"></b>
+		</div>
+		<hr>
+		<div id="storyGen">
+			<h2>Story generator</h2>
+			<button type="button" onclick="storyGenGenerate();">Generate</button><br>
+			<textarea readonly style="resize:none;display:none;" id="storyGenOutput" rows="15" cols="75"></textarea>
+		</div>
+		<hr>
+		<div id="multiplier">
+			<h2>Multiplier</h2>
+			<button type="button" onclick="multiplierReset();">Reset</button>
+			<button type="button" onclick="multiplierMultiply();">Multiply</button>
+			<b id="multiplierOutput">1</b>
+		</div>
+		<hr>
+	</body>
+</html> 
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var letter = 1;
+			function backspace() {
+				let str = document.getElementById("input").value;
+				if (str.length > 0) {
+					document.getElementById("input").value = str.slice(1);
+					letter = letter-1;
+				};
+			};
+			function addLetter(letter) {
+				document.getElementById("input").value=letter.toString()+document.getElementById("input").value;
+				letter = letter+1;
+			};
+			var interval = setInterval(function() {
+				document.getElementById("output").value=document.getElementById("input").value;
+			}, 100);
+		</script>
+		<style>
+			@font-face { font-family: Sevensegment; src: url('https://giantbooley.github.io/upside-down-calculator/SEVENSEGMENT.TTF'); }
+			.display {
+				font-family: Sevensegment;
+				font-size: 100px;
+				background-color: burlywood;
+				resize: none;
+			}
+			.rotated {
+				transform: rotate(180deg);
+				text-align: right;
+			}
+			.key {
+				cursor: pointer;
+				background-color: black;
+				color: white;
+				border: 4px solid gray;
+				padding: 16px 16px;
+				font-family: monospace;
+				display: inline-block;
+			}
+			.gray {
+				cursor: not-allowed;
+				opacity:0.2;
+			}
+		</style>
+	</head>
+	<body style="background-color:cornsilk">
+		<h1>Upside down calculator generator</h1><hr>
+		<textarea rows="1" cols="25" class="display" id="input">07734</textarea><br>
+		<textarea rows="1" cols="25" class="display rotated" id="output">07734</textarea><br>
+		<button class="key gray" onclick="addLetter('');" >q</button>
+		<button class="key gray" onclick="addLetter('');" >w</button>
+		<button class="key" onclick="addLetter('3');">e</button>
+		<button class="key gray" onclick="addLetter('');" >r</button>
+		<button class="key gray" onclick="addLetter('');" >t</button>
+		<button class="key gray" onclick="addLetter('');" >y</button>
+		<button class="key gray" onclick="addLetter('');" >u</button>
+		<button class="key" onclick="addLetter('1');">i</button>
+		<button class="key" onclick="addLetter('0');">o</button>
+		<button class="key gray" onclick="addLetter('');" >p</button>
+		<button class="key" onclick="backspace();">backspace</button>
+		<br>
+		<button class="key gray" onclick="addLetter('');">a</button>
+		<button class="key" onclick="addLetter('5');">s</button>
+		<button class="key" onclick="addLetter('0');">d</button>
+		<button class="key gray" onclick="addLetter('');" >f</button>
+		<button class="key" onclick="addLetter('6');">g</button>
+		<button class="key" onclick="addLetter('4');">h</button>
+		<button class="key gray" onclick="addLetter('');" >j</button>
+		<button class="key gray" onclick="addLetter('');" >k</button>
+		<button class="key" onclick="addLetter('7');">l</button>
+		<br>
+		<button class="key gray" onclick="addLetter('');" >z</button>
+		<button class="key gray" onclick="addLetter('');" >x</button>
+		<button class="key gray" onclick="addLetter('');" >c</button>
+		<button class="key gray" onclick="addLetter('');" >v</button>
+		<button class="key" onclick="addLetter('8');">b</button>
+		<button class="key gray" onclick="addLetter('');" >n</button>
+		<button class="key gray" onclick="addLetter('');" >m</button>
+	</body>
+</html> <!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var input = document.getElementById("input");
+			var output = document.getElementById("output");
+			function encode() {
+				document.getElementById("output").value = encodeURI(document.getElementById("input").value);
+			};
+			function decode() {
+				document.getElementById("output").value = decodeURI(document.getElementById("input").value);
+			};
+			function outputToInput() {
+				document.getElementById("input").value = document.getElementById("output").value;
+			}
+		</script>
+	</head>
+	<body style="background-color:cornsilk">
+		<h1>URL encoder and decoder</h1><hr>
+		<textarea style="resize:none" id="input" rows="15" cols="50"></textarea>
+		<button type="button" onclick="encode();">Encode</button>
+		<button type="button" onclick="decode();">Decode</button>
+		<button type="button" onclick="outputToInput();">Output to input</button>
+		<textarea style="resize:none" readonly id="output" rows="15" cols="50"></textarea>
+	</body>
+</html> <!DOCTYPE html>
+<html>
 	<head>
 		<style>
 			iframe {
@@ -1192,175 +1654,61 @@ myLoop();
 		</div>
 		<iframe style="display:none" width="100%" height="620" id="embed" src=""></iframe>
 	</body>
-</html> 
-<!DOCTYPE html>
+</html> <!DOCTYPE html>
 <html>
 	<head>
-		<title>HTML viewer</title>
 		<style>
-			#nonfullscreen {
-				display: block;
-			}
-			body {
-				background-color:cornsilk;
-				padding: 0px;
-			}
-			.border {
-				background-color: darkgray;
-				text-align: center;
-				user-select: none;
-				font-size: 32px;
-				display: block;
-				border: none;
-				float: left;
-			}
-			.border:hover {
+			a {
+				border: 3px outset gray;
 				background-color: gray;
+				color: white;
+				text-decoration: none;
 			}
-			iframe {
-				border: none;
-				display: block;
-				margin: 0px;
-				padding: 0px;
-				outline: none;
-			}
-			textarea {
-				resize: vertical;
-				border: none;
-				white-space: pre;
-				width: 90%;
-			}
-			.exitfull {
-				position: fixed;
-				opacity: 0.3;
-				border: 1px solid black;
-				background-color: darkgray;
-				top: 0;
-				left: 0;
-				width: 92px;
-				height: 20px;
-				padding: 0px;
-				border-bottom-right-radius: 10px;
-			}
-			.exitfull:hover {
-				position: fixed;
-				opacity: 0.8;
-				border: 1px solid black;
-				background-color: gray;
-				top: 0;
-				left: 0;
-				width: 92px;
-				height: 20px;
-				padding: 0px;
-				border-bottom-right-radius: 10px;
-			}
-			#title {
-				background-color: lightgray;
-				border: 3px inset gray;
-				width: 100%;
-				display: block;
+			a:hover {
+				color: cyan;
+				border-style: inset;
 			}
 		</style>
-		<script>
-			function save() {
-				localStorage.setItem('HTMLSAVE', document.getElementById("input").value);
-			};
-			window.onload = function() {
-				document.getElementById("input").value = localStorage.getItem('HTMLSAVE');
-			};
-			function download(filename, text) {
-				var element = document.createElement('a');
-				element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-				element.setAttribute('download', filename);
-				
-				element.style.display = 'none';
-				document.body.appendChild(element);
-
-				element.click();
-				
-				document.body.removeChild(element);
-			};
-			function downloadHTML() {
-				download("index.html",document.getElementById("input").value);
-			};
-			window.onbeforeunload = function() {
-				if (document.getElementById("input").value !== localStorage.getItem('HTMLSAVE')) {
-					return 'Are you sure you want to leave?';
-				};
-			};
-			function updateAsHTML() {
-				document.getElementById("title").innerHTML = "Title: ";
-				document.getElementById("embed").srcdoc=document.getElementById("input").value;
-				setTimeout(() => {
-					document.getElementById("title").innerHTML = "Title: "+document.getElementById("embed").contentWindow.document.getElementsByTagName("title")[0].innerHTML;
-				}, 100);
-				
-			};
-			var fullscreen = false;
-			function toggleFullScreen() {
-				if (fullscreen == true) {
-					fullscreen = false;
-					document.getElementById("nonfullscreen").style.display="block";
-					document.getElementsByClassName("exitfull")[0].style.display="none";
-				} else {
-					fullscreen = true;
-					document.getElementById("nonfullscreen").style.display="none";
-					document.getElementsByClassName("exitfull")[0].style.display="block";
-				};
-			};
-			var darkModeOn = false;
-			function darkMode() {
-				if (darkModeOn == true) {
-					darkModeOn = false;
-					document.getElementById("input").style.backgroundColor="white";
-					document.getElementById("input").style.color="black";
-					document.getElementById("jsinput").style.backgroundColor="white";
-					document.getElementById("jsinput").style.color="black";
-					document.body.style="background-color: cornsilk; color: black";
-				} else {
-					darkModeOn = true;
-					document.getElementById("input").style.backgroundColor="darkslategray";
-					document.getElementById("input").style.color="white";
-					document.getElementById("jsinput").style.backgroundColor="darkslategray";
-					document.getElementById("jsinput").style.color="white";
-					document.body.style="background-color: #000723; color: white";
-				};
-			};
-			function unloadHTML() {
-				document.getElementById("embed").srcdoc="";
-				document.getElementById("title").innerHTML = "Title: ";
-			};
-			function iFrameJavascript() {
-				alert("bob");
-			};
-			function runJavascript() {
-				var x = document.getElementById('embed').contentWindow.createElement("script");
-				x.innerHTML = "function thisFunctionIsMegaLongSoItDoesntInterfereWithThePageAndItIsAFunctionBobTomFredMike() {"+document.getElementById("jsinput").value+"};";
-				document.getElementById('embed').contentWindow.thisFunctionIsMegaLongSoItDoesntInterfereWithThePageAndItIsAFunctionBobTomFredMike();
-				x.remove();
-			};
-		</script>
 	</head>
-	<body>
-		<div id="nonfullscreen">
-			<h1>HTML viewer</h1><br>
-			<hr>
-			<label>Settings:</label>
-			<input id="darkmode" type="checkbox" onclick="darkMode();">Dark mode |</input>
-			<button onclick="save(); alert('HTML input saved to local storage.');">Save</button>
-			<hr>
-			<textarea style="background-color:white;color:black;height:350px;" placeholder="Type HTML" id="input" spellcheck="false" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea><br>
-			<textarea style="background-color:white;color:black;height:100px;display: none;" placeholder="Type javascript" id="jsinput" spellcheck="false" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea>
-			<button class="border" style="width:100%;" onclick="updateAsHTML();"><strong>Update HTML</strong></button><br><br>
-			<div id="title">Title: </div>
-			<button class="border" style="width:33.333%;" onclick="downloadHTML();"><strong>Download</strong></button>
-			<button class="border" style="width:33.333%;" onclick="unloadHTML();"><strong>Unload HTML</strong></button>
-			<button class="border" style="width:25%; display: none;" onclick="runJavascript();"><strong>Run javascript</strong></button>
-			<button class="border" style="width:33.333%;" onclick="toggleFullScreen();"><strong>Fullscreen</strong></button><br>
-		</div>
-	</body>
-	<div style="background-color:white">
-			<button style="display: none;" class="exitfull" onclick="toggleFullScreen()">Exit fullscreen</button>
-			<iframe id="embed" srcdoc="<p>type in text box and press update html</p>" width="100%" height="617"></iframe>
+	<body style="background-color:cornsilk">
+		<h1>GiantBooley's website</h1>
+		<p>friends github: <a href=https://WyattNewman.github.io/>wyattnewman.github.io (this is my website)</a></p>
+	<hr>
+	<div id="stuff">
+		<h2>Random stuff</h2><br>
+		<a href="fake-terminal">Fake terminal</a><br>
+		<a href="fake-hack-decimal">Fake hack decimal</a><br>
+		<a href="fake-hack-binary">Fake hack binary</a><br>
+		<a href="bookmarklets">Bookmarklets</a><br>
+		<a href="fake-hack-code">Fake code hack</a><br>
+		<a href="click-the-button">Click the button</a><br>
+		<a href="mining-simulator">Mining simulator</a><br>
 	</div>
+	<hr>
+	<div id="tools">
+		<h2>Tools stuff</h2><br>
+		<a href="tools">Other tools</a><br>
+		<a href="url-encode-decode">URL encoder and decoder</a><br>
+		<a href="number-shortener">Number shortener</a><br>
+		<a href="javascript-tester">Javascript tester</a><br>
+		<a href="upside-down-calculator">Upside down calculator generator</a><br>
+		<a href="file-downloader">File downloader</a><br>
+		<a href="html-viewer">HTML viewer</a><br>
+		<a href="website-embedder">Website embedder</a><br>
+		<a href="discord-text-emoji-generator">Discord text emoji generator</a><br>
+		<a href="story-lengthener">Story lengthener</a><br>
+	</div>
+	<hr>
+	<div id="unblocked">
+		<h2>Unblocked stuff</h2><br>
+		<a href="unbloked/y8/www.y8.com/games/slope.html">slope unblocked</a><br>
+		<a href="unbloked/y8/www.y8.com/games/subway_surfers_world_tour_houston.html">subway surfers unblocked</a><br>
+	</div>
+	<hr>
+	<div id="brokenStuff" style="opacity: 0.5;">
+		<h2>Broken stuff</h2><br>
+		<a href="nvidia-gaugan/gaugan.org/gaugan2">nvidia gaugan</a><br>
+	</div>
+	<hr>
+	</body>
 </html>
