@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,7 +10,7 @@
 			input {
 				width: 100px;
 			}
-			button {
+			.generate {
 				width: 50%
 			}
 			body {
@@ -62,16 +63,25 @@
 				};
 				document.getElementById("output").innerText = output;
 			};
+			function loadFile(filename) {
+				fetch(filename).then((resp) => resp.text()).then(function(data) {
+					document.getElementById("input").innerHTML = data;
+				});
+			};
 		</script>
 	</head>
 	<body>
 		<h1>Story lengthener</h1>
 		<p>type stuff in the box to generate or do the button. you need to have the first word at the end for it to work.</p> 
 		<hr>
+		<label>Datasets:</label>
+		<button onclick="loadFile('https://giantbooley.github.io/story-lengthener/datasets/bob.txt')">Bob</button>
+		<button onclick="loadFile('https://giantbooley.github.io/story-lengthener/datasets/do_now.txt')">Do now</button>
+		<hr>
 		<textarea id="input"  onkeyup="generate();" placeholder="type stuff"></textarea>
 		<textarea id="output" readonly></textarea>
 		<label for="storyLength">Story length (words):</label>
 		<input type="number" id="storyLength" value=100>
-		<button onclick="generate();">Generate</button>
+		<button onclick="generate();" class="generate">Generate</button>
 	</body>
 </html>
