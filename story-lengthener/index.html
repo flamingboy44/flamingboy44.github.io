@@ -65,7 +65,7 @@
 			};
 			function loadFile(filename) {
 				fetch(filename).then((resp) => resp.text()).then(function(data) {
-					document.getElementById("input").innerHTML = data;
+					document.getElementById("input").innerText = data;
 				});
 			};
 		</script>
@@ -78,6 +78,7 @@
 		<button onclick="loadFile('https://giantbooley.github.io/story-lengthener/datasets/bob.txt')">Bob</button>
 		<button onclick="loadFile('https://giantbooley.github.io/story-lengthener/datasets/do_now.txt')">Do now</button>
 		<button onclick="loadFile('https://giantbooley.github.io/story-lengthener/datasets/html.txt')">HTML</button>
+		<button onclick="loadFile('https://giantbooley.github.io/story-lengthener/datasets/essay.txt')">Essay</button>
 		<hr>
 		<textarea id="input"  onkeyup="generate();" placeholder="type stuff"></textarea>
 		<textarea id="output" readonly></textarea>
