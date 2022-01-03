@@ -57,7 +57,6 @@
 				output = randomProperty(words).word;
 				currentWord = output;
 				for (let i = 0; i < document.getElementById("storyLength").value-1; i++) {
-					console.log(currentWord);
 					wordToAdd = getAfterOf(currentWord);
 					output = output+" "+wordToAdd;
 					currentWord = wordToAdd;
