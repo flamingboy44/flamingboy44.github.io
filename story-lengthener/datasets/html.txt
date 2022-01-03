@@ -1711,4 +1711,4 @@ body {
 	</div>
 	<hr>
 	</body>
-</html>
+</html> <!DOCTYPE
