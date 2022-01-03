@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			textarea {
+				width: 49%;
+				height: 400px;
+			}
+			input {
+				width: 100px;
+			}
+			button {
+				width: 50%
+			}
+			body {
+				background-color: cornsilk;
+			}
+		</style>
+		<script>
+			function choose(arr) {
+				return arr[Math.floor(Math.random()*arr.length)];
+			};
+			function randomProperty(obj) {
+				var keys = Object.keys(obj);
+				return obj[keys[ keys.length * Math.random() << 0]];
+			};
+			var filtered = new Array();
+			var storyLength = 100;
+			var words = new Object();
+			var input = new String();
+			var output = new String();
+			var currentWord = new String();
+			var wordToAdd = new String();
+			function getAfterOf(word) {
+				return choose(words[word].after);
+			};
+			function generate() {
+				words = {};
+				input = document.getElementById("input").value;
+				input = input.split(" ");
+				for (let i = 0; i < input.length; i++) {
+					if (typeof words[input[i]] !== 'undefined') {
+						if (typeof input[i+1] !== 'undefined') {
+							words[input[i]].after.push(input[i+1]);
+						};
+					} else {
+						words[input[i]] = new Object();
+						words[input[i]].word = input[i];
+						if (typeof input[i+1] == undefined) {
+							words[input[i]].after = [];
+						} else {
+							words[input[i]].after = [input[i+1]];
+						};
+					};
+				};
+				output = randomProperty(words).word;
+				currentWord = output;
+				for (let i = 0; i < document.getElementById("storyLength").value-1; i++) {
+					console.log(currentWord);
+					wordToAdd = getAfterOf(currentWord);
+					output = output+" "+wordToAdd;
+					currentWord = wordToAdd;
+				};
+				document.getElementById("output").innerText = output;
+			};
+		</script>
+	</head>
+	<body>
+		<h1>Story lengthener</h1>
+		<p>type stuff in the box to generate or do the button. you have to have at least 2 of the same word for it to work.</p> 
+		<hr>
+		<textarea id="input"  onkeyup="generate();" placeholder="type stuff"></textarea>
+		<textarea id="output" readonly></textarea>
+		<label for="storyLength">Story length (words):</label>
+		<input type="number" id="storyLength" value=100>
+		<button onclick="generate();">Generate</button>
+	</body>
+</html>
