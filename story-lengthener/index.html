@@ -35,17 +35,32 @@
 			};
 			function generate() {
 				let input = document.getElementById("input").value;
-				switch (document.getElementById("inputType").value) {
-					case "words":
-						input = input.split(/\n| /);
-					break;
-					case "letters":
-						input = input.split("");
-					break;
-					case "lines":
-						input = input.split("\n");
-					break;
+				if (!document.getElementById("twoWords").checked) {
+					switch (document.getElementById("inputType").value) {
+						case " ":
+							input = input.split(/\n| /);
+						break;
+						case "":
+							input = input.split("");
+						break;
+						case "\n":
+							input = input.split("\n");
+						break;
+					};
+				} else {
+					switch (document.getElementById("inputType").value) {
+						case " ":
+							input = input.match(/\S+ \S+/g);
+						break;
+						case "":
+							input = input.match(/.{2}/g);
+						break;
+						case "\n":
+							input = input.match(/.+\n.+/g);
+						break;
+					};
 				};
+				
 				let afters = {};
 				let output = "";
 				let previousWord = "";
@@ -68,31 +83,11 @@
 					previousWord = document.getElementById("startingWord").value;
 				};
 				
-				switch (document.getElementById("inputType").value) {
-					case "words":
-						output = previousWord+" ";
-					break;
-					case "letters":
-						output = previousWord;
-					break;
-					case "lines":
-						output = previousWord+"\n";
-					break;
-				};
+				output = previousWord+document.getElementById("inputType").value;
 				
 				for (let i = 0; i < document.getElementById("storyLength").valueAsNumber; i++) {
 					previousWord = afters[previousWord].getRandom();
-					switch (document.getElementById("inputType").value) {
-						case "words":
-							output+=previousWord+" ";
-						break;
-						case "letters":
-							output+=previousWord;
-						break;
-						case "lines":
-							output+=previousWord+"\n";
-						break;
-					};
+					output+=previousWord+document.getElementById("inputType").value;
 				};
 				document.getElementById("output").value = output
 			};
@@ -119,15 +114,18 @@
 			<button onclick="loadFile('./datasets/quotes.txt');">Quotes</button>
 		<hr>
 		<label>Settings:</label>
-		<input type="checkbox" id="updateOnTypeCheckbox" checked>
-		<label for="updateOnTypeCheckbox">Update on type</label>
-		<label>|</label>
-		<label for="inputType">Input type:</label>
-		<select id="inputType">
-			<option value="words">Words</option>
-			<option value="letters">Letters</option>
-			<option value="lines">Lines</option>
-		</select>
+			<input type="checkbox" id="updateOnTypeCheckbox" checked>
+			<label for="updateOnTypeCheckbox">Update on type</label>
+			<label>|</label>
+			<label for="inputType">Input type:</label>
+			<select id="inputType">
+				<option value=" ">Words</option>
+				<option value="">Letters</option>
+				<option value="\n">Lines</option>
+			</select>
+			<label>|</label>
+			<input type="checkbox" id="twoWords">
+			<label for="twoWords">2</label>
 		<hr>
 		<textarea id="input" onkeyup="inputKeyUp();" placeholder="type stuff"></textarea>
 		<textarea id="output" readonly></textarea><br>
@@ -137,4 +135,4 @@
 		<label for="startingWord">Starting word:</label>
 		<textarea id="startingWord" rows="1" placeholder="word"></textarea>
 	</body>
-</html>
+</html>script
