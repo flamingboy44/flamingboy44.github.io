@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -53,7 +54,7 @@
 							input = input.match(/\S+ \S+/g);
 						break;
 						case "":
-							input = input.match(/.{2}/g);
+							input = input.match(/\s|\S{2}/g);
 						break;
 						case "\n":
 							input = input.match(/.+\n.+/g);
