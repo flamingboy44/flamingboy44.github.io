@@ -7,22 +7,13 @@
 		<title>The Cuban Missile Crisis | NHD</title>
 		<link rel="stylesheet" href="./style.css">
 	</head>
-	<body>
-		<div class="title-top-header">
+	<body onscroll="let table=document.getElementById('table-of-contents');if(document.getElementById('table-of-contents-scroll').getBoundingClientRect().top<0){table.style.position='fixed'}else{table.style.position='static'}">
+		<div id="top"></div>
+		<div id="title-top-header">
 			<h1>The Cuban Missile Crisis: The Political Standoff That Could Have Ended The World</h1>
-			<h3>By: Wyatt Newman, Apostoli Mano, Cassidy Pickering, and Anthony Duncan</h3>
+			<h4>By: Wyatt Newman, Apostoli Mano, Cassidy Pickering, and Anthony Duncan</h4>
 		</div>
-		<div class="section table-of-contents">
-			<div id="table-of-contents-header-center">
-				<h2 class="heading">Table of contents</h2>
-			</div>
-			<hr>
-			<div class="table-of-contents-links">
-				<a class="table-of-contents-link" href="#section-introduction">1 Introduction</a><br/>
-				<a class="table-of-contents-link" href="#section-thesis-statement">2 Thesis statement</a><br/>
-				<a class="table-of-contents-link" href="#section-historical-context">3 Historical context</a><br/>
-			</div>
-		</div>
+		<a href="#top" id="scroll-to-top-button" title="Scroll to top">Λ</a>
 		<div class="main-content">
 			<section class="section" id="section-introduction">
 				<h2 class="heading">Introduction</h2>
@@ -72,6 +63,21 @@
 					type stuff here Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ullam magni eum porro, quos laborum at repudiandae ipsum enim deleniti sit est. Expedita adipisci illo commodi aspernatur! Numquam laudantium sit vitae nam eos provident mollitia suscipit optio vel iusto. Modi blanditiis, vitae incidunt autem eligendi doloribus enim beatae delectus vel.
 				</p>
 			</section>
+		</div>
+		<div class="right-bar">
+			<img id="nhd-logo" src="./nhdlogo.png"></img>
+			<div id="table-of-contents-scroll"></div>
+			<div class="section" id="table-of-contents">
+				<div id="table-of-contents-header-center">
+					<h2 class="heading">Table of Contents</h2>
+				</div>
+				<hr>
+				<div id="table-of-contents-links">
+					<a class="table-of-contents-link" href="#section-introduction">1 Introduction</a><br/>
+					<a class="table-of-contents-link" href="#section-thesis-statement">2 Thesis Statement</a><br/>
+					<a class="table-of-contents-link" href="#section-historical-context">3 Historical Context</a><br/>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
