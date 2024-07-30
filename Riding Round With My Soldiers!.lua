@@ -24,7 +24,3 @@ getgenv().itemtoo = {
                 [2] = "Killua [LV.6250]"
             };
         }
-        if table.find(itemtoo.Killua, _G.MonnyHi) then
-            local item = plr.Backpack:FindFirstChild(itemtoo.Killua[1])
-            item.Parent = chr
-        end
