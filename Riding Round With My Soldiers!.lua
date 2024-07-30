@@ -24,3 +24,27 @@ getgenv().itemtoo = {
                 [2] = "Killua [LV.6250]"
             };
         }
+if table.find(itemtoo.Gojo_Unleashed, _G.MonnyHi) then
+            local item = plr.Backpack:FindFirstChild(itemtoo.Gojo_Unleashed[1])
+            item.Parent = chr
+        end
+        if table.find(itemtoo.Altoria_Alter, _G.MonnyHi) then
+            local item = plr.Backpack:FindFirstChild(itemtoo.Altoria_Alter[1])
+            item.Parent = chr
+        end
+        if table.find(itemtoo.SukunaHalf, _G.MonnyHi) then
+            local item = plr.Backpack:FindFirstChild(itemtoo.SukunaHalf[1])
+            item.Parent = chr
+        end
+        if table.find(itemtoo.Choso, _G.MonnyHi) then
+            local item = plr.Backpack:FindFirstChild(itemtoo.Choso[1])
+            item.Parent = chr
+        end
+        if table.find(itemtoo.Meguna, _G.MonnyHi) then
+            local item = plr.Backpack:FindFirstChild(itemtoo.Meguna[1])
+            item.Parent = chr
+        end
+        if table.find(itemtoo.Killua, _G.MonnyHi) then
+            local item = plr.Backpack:FindFirstChild(itemtoo.Killua[1])
+            item.Parent = chr
+        end
