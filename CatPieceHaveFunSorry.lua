@@ -1,17 +1,17 @@
-_G.chosenWeapon = "StrongSpear" -- Weapon using (suggested that is combat or sword)
-
-
+-- dont take this script or else i will get you ;)
+-- Jk its easy make just give a credit :D
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/flamingboy44/Roblox-UI-Libs/main/Rayfield%20Lib/Rayfield%20Lib%20Source.lua'))()
 
 local Window = Rayfield:CreateWindow({
 	Name = "Cat Piece Script",
-	LoadingTitle = "Cat Piece Whayado!",
-	LoadingSubtitle = "by infinite0044",
+	LoadingTitle = "Cat Piece by Flame Hub!",
+	LoadingSubtitle = "by discord.gg/HhCBYcbsab",
 	ConfigurationSaving = {
 		Enabled = true,
 		FolderName = "Cat Piece Whayado!",
-		FileName = "Cat Hub"
-	},
+		FileName = "Flame Hub"
+	}
+	--[[
 	KeySystem = false, -- Set this to true to use their key system
 	KeySettings = {
 		Title = "Sirius Hub",
@@ -19,7 +19,7 @@ local Window = Rayfield:CreateWindow({
 		Note = "Join the discord (discord.gg/sirius)",
 		SaveKey = true,
 		Key = "ABCDEF"
-	}
+	}]]
 })
 
 Rayfield:Notify("New script", "Hi ur using this made by infinite0044", 4483362458) -- Notfication -- Title, Content, Image
@@ -39,9 +39,9 @@ local axehand = Tab:CreateToggle({
 		        game:GetService("ReplicatedStorage")["sea3CHESTS"].RemoteEvent:FireServer(unpack(args))
                     if workspace.NPCS:FindFirstChild("AxeHand") then
                         game.Players.LocalPlayer.Character:PivotTo(workspace.NPCS:FindFirstChild("AxeHand").HumanoidRootPart.CFrame)
-                    if game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Name == _G.chosenWeapon then
-                        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):Activate()
-                    elseif not game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+                    if game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon) then
+                        game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon):Activate()
+                    elseif not game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon) then
                         game.Players.LocalPlayer.Backpack[toolname].Parent = game.Players.LocalPlayer.Character
                     end
                 end
@@ -66,9 +66,9 @@ local youngshanks = Tab:CreateToggle({
 		        game:GetService("ReplicatedStorage")["sea3CHESTS"].RemoteEvent:FireServer(unpack(args))
                     if workspace.NPCS:FindFirstChild("YoungShanks") then
                         game.Players.LocalPlayer.Character:PivotTo(workspace.NPCS:FindFirstChild("YoungShanks").HumanoidRootPart.CFrame)
-                    if game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Name == _G.chosenWeapon then
-                        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):Activate()
-                    elseif not game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+                    if game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon) then
+                        game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon):Activate()
+                    elseif not game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon) then
                         game.Players.LocalPlayer.Backpack[toolname].Parent = game.Players.LocalPlayer.Character
                     end
                 end
@@ -93,9 +93,9 @@ local sukuna = Tab:CreateToggle({
 		        game:GetService("ReplicatedStorage")["sea3CHESTS"].RemoteEvent:FireServer(unpack(args))
                     if workspace.NPCS:FindFirstChild("Sukuna") then
                         game.Players.LocalPlayer.Character:PivotTo(workspace.NPCS:FindFirstChild("Sukuna").HumanoidRootPart.CFrame)
-                    if game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Name == _G.chosenWeapon then
-                        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):Activate()
-                    elseif not game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+                    if game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon) then
+                        game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon):Activate()
+                    elseif not game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon) then
                         game.Players.LocalPlayer.Backpack[toolname].Parent = game.Players.LocalPlayer.Character
                     end
                 end
@@ -120,9 +120,9 @@ local sukuna = Tab:CreateToggle({
 		        game:GetService("ReplicatedStorage")["sea3CHESTS"].RemoteEvent:FireServer(unpack(args))
                     if workspace.NPCS:FindFirstChild("Gojo") then
                         game.Players.LocalPlayer.Character:PivotTo(workspace.NPCS:FindFirstChild("Gojo").HumanoidRootPart.CFrame)
-                    if game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool").Name == _G.chosenWeapon then
-                        game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool"):Activate()
-                    elseif not game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool") then
+                    if game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon) then
+                        game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon):Activate()
+                    elseif not game.Players.LocalPlayer.Character:FindFirstChild(_G.chosenWeapon) then
                         game.Players.LocalPlayer.Backpack[toolname].Parent = game.Players.LocalPlayer.Character
                     end
                 end
